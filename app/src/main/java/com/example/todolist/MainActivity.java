@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 FileHelper.writeData(items, this);
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
 
-                Analytics.trackEvent("add button clicked");
+                Analytics.trackEvent("add button nice");
                 break;
         }
     }
