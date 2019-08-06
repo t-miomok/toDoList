@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AppCenter.start(getApplication(), "2ff90b14-6563-427a-8c4d-2a47d09a8761",
                 Analytics.class, Crashes.class);
 
+        Analytics.trackEvent("My custom event");
+
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
         itemsList = findViewById(R.id.items_list);
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 itemET.setText("");
                 FileHelper.writeData(items, this);
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+
+                Analytics.trackEvent("add button clicked");
                 break;
         }
     }
