@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AppCenter.start(getApplication(), "2ff90b14-6563-427a-8c4d-2a47d09a8761",
+                Analytics.class, Crashes.class);
 
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
